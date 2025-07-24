@@ -1,0 +1,119 @@
+`timescale 1ns / 1ps
+
+module RISCV_processador(
+    input wire clk,
+    input wire reset,
+    input wire [31:0] external_input_i // Para MMIO de entrada
+);
+
+    // --- FIOS INTERNOS (WIRES) ---
+    wire [31:0] pc_out, instruction, pc_plus_4, pc_target_addr, next_pc;
+    wire [6:0]  opcode;
+    wire [2:0]  funct3;
+    wire [6:0]  funct7;
+    wire [4:0]  rs1_addr, rs2_addr, rd_addr;
+    wire [31:0] imm_extended;
+    
+    // Sinais de Controle
+    wire        RegWrite, AluSrc, MemRead, MemWrite, Branch, Jump, UseMD, Inst;
+    wire [2:0] BranchType; 
+    wire [1:0] MulDivOp, Mux3_sel;
+    wire [3:0] AluControl;
+    
+    // Barramentos de Dados
+    wire [31:0] read_data1, read_data2;
+    wire [31:0] alu_input2, alu_result;
+    wire        alu_zero_flag, alu_negative_flag, alu_overflow_flag;
+    wire [31:0] md_result, exec_result, reg_write_data;
+    wire        mem_write_enable, display_write_enable, select_input_device;
+    wire [31:0] data_from_mem, final_read_data;
+    wire        branch_taken;
+
+    // --- DECODIFICAÇÃO DE CAMPOS ---
+    assign opcode = instruction[6:0];
+    assign rd_addr  = instruction[11:7];
+    assign funct3 = instruction[14:12];
+    assign rs1_addr = instruction[19:15];
+    assign rs2_addr = instruction[24:20];
+    assign funct7 = instruction[31:25];
+
+    // ===================================================================
+    // == INSTANCIAÇÃO DE TODOS OS MÓDULOS (FLUXO MONOCICLO) ==
+    // ===================================================================
+
+    // --- ETAPA 1: BUSCA DE INSTRUÇÃO (PC e Memória de Instrução) ---
+    pc_plus_4_adder pc_plus_4_adder_inst ( .current_pc(pc_out), .pc_plus_4(pc_plus_4) );
+    pc_target_adder pc_target_adder_inst ( .in_pc_out(pc_out), .in_imm_extended(imm_extended), .out_pc_target(pc_target_addr));
+    
+    // MUX4 para selecionar o próximo PC (precisa do resultado da unidade de branch)
+    Mux4_pc_source mux4_inst (
+        .in_pc_plus_4(pc_plus_4), 
+        .in_pc_target(pc_target_addr), 
+        .in_alu_result(alu_result), // Para JALR
+        .sel_jump(Jump), 
+        .sel_branch_taken(branch_taken), 
+        .opcode_i(opcode),
+        .out_pc_in(next_pc)
+    );
+
+    program_counter program_counter_inst ( .clock(clk), .reset(reset), .pc_in(next_pc), .pc_out(pc_out) );
+    instruction_memory instruction_memory_inst ( .address(pc_out), .instruction(instruction) );
+
+    // --- ETAPA 2: DECODIFICAÇÃO (Unidade de Controle e Banco de Registradores - Leitura) ---
+    Unidade_de_controle unidade_de_controle_inst (
+        .opcode(opcode), .funct3(funct3), .funct7(funct7), 
+        .RegWrite(RegWrite), .ALUSrc(AluSrc), .ALUControl(AluControl), 
+        .MemRead(MemRead), .MemWrite(MemWrite), .MemtoReg(MemtoReg), 
+        .Branch(Branch), .Jump(Jump), .UseMD(UseMD), .MulDivOp(MulDivOp), 
+        .BranchType(BranchType), .Inst(Inst)
+    );
+    extensor extensor_inst ( .instr(instruction), .imm_ext(imm_extended) );
+    bancoderegistradores bancoderegistradores_inst ( 
+        .clock(clk), .reset(reset), .reg_write(RegWrite), 
+        .read_addr1(rs1_addr), .read_addr2(rs2_addr), .write_addr(rd_addr), 
+        .write_data(reg_write_data), .read_data1(read_data1), .read_data2(read_data2) 
+    );
+    
+    // --- ETAPA 3: EXECUÇÃO (ULA, Unidade DIV/MULT, etc.) ---
+    Mux1 mux1_inst ( .in_read_data2(read_data2), .in_imm_extended(imm_extended), .sel_alu_src(AluSrc), .out_alu_operand_b(alu_input2) );
+    ula ula_inst ( 
+        .operand_a(read_data1), 
+        .operand_b(alu_input2), 
+        .alu_control(AluControl), 
+        .alu_result(alu_result), 
+        .zero_flag(alu_zero_flag), 
+        .negative_flag(alu_negative_flag), // <<< NOVA CONEXÃO
+        .overflow_flag(alu_overflow_flag)  // <<< NOVA CONEXÃO
+    );
+    
+    div_mult div_mult_inst ( .operand1(read_data1), .operand2(read_data2), .mul_div_op(MulDivOp), .md_result(md_result) );
+    // Unidade de Branch para determinar se o desvio é tomado
+    brench branch_inst ( 
+        .Branch_i(Branch), .BranchType_i(BranchType), 
+        .Zero_i(alu_zero_flag), 
+        .Negative_i(alu_negative_flag), 
+        .BranchTaken_o(branch_taken) 
+    );
+
+    // MUX2 para selecionar o resultado da etapa de execução
+    Mux2 mux2_inst ( .in_alu_result(alu_result), .in_md_result(md_result), .sel_use_md(UseMD), .out_conta_final(exec_result) );
+
+    // --- ETAPA 4: ACESSO À MEMÓRIA E I/O ---
+    decoder_mmio_output dec_out_inst ( .MemWrite_i(MemWrite), .Address_i(alu_result), .Display_WriteEnable_o(display_write_enable), .MemDados_WriteEnable_o(mem_write_enable) );
+    data_memory data_mem_inst ( .clk(clk), .MemWrite(mem_write_enable), .MemRead(MemRead), .address(alu_result), .write_data(read_data2), .read_data(data_from_mem) );
+    decoder_mmio_input dec_in_inst ( .MemRead_i(MemRead), .Address_i(alu_result), .select_input_device_o(select_input_device) );
+    
+    // MUX5 para selecionar entre memória principal e MMIO de entrada
+    assign final_read_data = (select_input_device) ? external_input_i : data_from_mem;
+
+    // --- ETAPA 5: WRITE-BACK (MUX3 para selecionar o dado a ser escrito) ---
+    assign Mux3_sel = {Inst, MemtoReg};
+    Mux3 mux3_inst ( 
+        .in_exec_result(exec_result), 
+        .in_mem_data(final_read_data), 
+        .in_pc_plus_4(pc_plus_4), 
+        .sel(Mux3_sel), 
+        .out_data(reg_write_data) 
+    );
+
+endmodule

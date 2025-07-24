@@ -1,0 +1,98 @@
+module toplevel (
+    input  wire        CLOCK_50,
+    input  wire [17:0]  SW,
+    input  wire [3:0]  KEY,
+    
+    output wire [6:0]  HEX0, HEX1, HEX2, HEX3, 
+    output wire [6:0]  HEX4, HEX5, HEX6, HEX7
+    output wire [9:0]  LEDR // Use os LEDs vermelhos para depuração
+);
+    
+    wire        reset_signal = ~KEY[3];
+//     wire [31:0] input_device_data;
+
+//     // --- Sinais que conectam a CPU ao Display ---
+//     wire [31:0] data_to_display;
+//     wire        display_we; // Write Enable para o display
+
+//     input_device input_unit (
+//         .clk(CLOCK_50),
+//         .reset(reset_signal),
+//         .physical_switches_i({14'b0, SW}),
+//         .enter_button_i(~KEY[0]),
+//         .data_out_o(input_device_data)
+//     );
+
+//     // Instancia o processador RISC-V 
+//     RISCV_processador cpu (
+//         .clk(CLOCK_50),
+//         .reset(reset_signal),
+//         .external_input_i(input_device_data),
+//         .display_data_o(data_from_cpu_to_display), 
+//         .display_we_o(we_from_cpu_to_display)       
+//     );
+    
+//     // --- LÓGICA DO DISPLAY ---
+//     // Registrador para armazenar o último valor enviado pela CPU para o display
+//     reg [31:0] display_value_reg;
+    
+//     always @(posedge CLOCK_50 or posedge reset_signal) begin
+//         if (reset_signal) begin
+//             display_value_reg <= 32'd0;
+//         end else if (display_we) begin // Se a CPU quer escrever no display
+//             display_value_reg <= data_from_cpu_to_display; // armazena o valor.
+//         end
+//     end
+
+//     wire [31:0] bcd_result; // 8 dígitos BCD de 4 bits
+//     binary_to_bcd bcd_converter (
+//         .binary_in(display_value_reg),
+//         .bcd_out(bcd_result)
+//     );
+    
+//     // Função de conversão 
+//     function [6:0] bcd_to_7seg;
+//         input [3:0] digit;
+//         case (digit)
+//             4'h0: bcd_to_7seg = 7'b1000000;
+//             4'h1: bcd_to_7seg = 7'b1111001;
+//             4'h2: bcd_to_7seg = 7'b0100100;
+//             4'h3: bcd_to_7seg = 7'b0110000;
+//             4'h4: bcd_to_7seg = 7'b0011001;
+//             4'h5: bcd_to_7seg = 7'b0010010;
+//             4'h6: bcd_to_7seg = 7'b0000010;
+//             4'h7: bcd_to_7seg = 7'b1111000;
+//             4'h8: bcd_to_7seg = 7'b0000000;
+//             4'h9: bcd_to_7seg = 7'b0010000;
+//             default: bcd_to_7seg = 7'b1111111; // Apagado
+//         endcase
+//     endfunction
+
+//     assign HEX0 = bcd_to_7seg(bcd_result[3:0]);    // Unidades
+//     assign HEX1 = bcd_to_7seg(bcd_result[7:4]);    // Dezenas
+//     assign HEX2 = bcd_to_7seg(bcd_result[11:8]);   // Centenas
+//     assign HEX3 = bcd_to_7seg(bcd_result[15:12]);  // Milhares
+//     assign HEX4 = bcd_to_7seg(bcd_result[19:16]);
+//     assign HEX5 = bcd_to_7seg(bcd_result[23:20]);
+//     assign HEX6 = bcd_to_7seg(bcd_result[27:24]);
+//     assign HEX7 = bcd_to_7seg(bcd_result[31:28]);  // Dígito mais significativo
+
+// endmodule
+
+ // Teste 1: O clock está funcionando?
+    // Crie um contador lento para piscar um LED.
+    reg [24:0] clock_divider_reg;
+    always @(posedge CLOCK_50 or posedge reset_signal) begin
+        if (reset_signal) begin
+            clock_divider_reg <= 0;
+        end else begin
+            clock_divider_reg <= clock_divider_reg + 1;
+        end
+    end
+    assign LEDR[0] = clock_divider_reg[24]; // Este LED deve piscar aproximadamente 1 vez por segundo
+
+    // Teste 2: O sinal de reset está funcionando?
+    // Este LED deve acender APENAS quando você segura o botão KEY[0].
+    assign LEDR[9] = reset_signal;
+
+endmodule

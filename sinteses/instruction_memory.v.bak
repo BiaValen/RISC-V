@@ -1,0 +1,21 @@
+
+module instruction_memory (
+    input  wire [31:0] address,
+    output wire [31:0] instruction
+);
+    // Memória para 256 instruções de 32 bits
+    reg [31:0] mem [0:255];
+
+    // Carrega o programa do arquivo 'program.hex' no início da simulação
+    //initial begin
+    //    $readmemh("tb/jumpcerto.b", mem);
+    //end
+
+    initial begin
+        $readmemb("../tb/fibonacci.b", mem);
+    end
+
+    // A leitura é combinacional.   
+    assign instruction = mem[address[9:2]]; 
+
+endmodule

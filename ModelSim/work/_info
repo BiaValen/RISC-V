@@ -1,0 +1,564 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/User/Desktop/RISCV_processador_tb
+vbancoderegistradores
+Z0 !s110 1753130144
+!i10b 1
+!s100 VlBc5fjzf4>3lAl_cjb?h0
+I^dzXM`n5ZghkIIAbWXlWM2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/User/Desktop/RISCV_processador/ModelSim
+w1751475131
+8C:/Users/User/Desktop/RISCV_processador/sinteses/bancoderegistradores.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/bancoderegistradores.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1753130144.000000
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/bancoderegistradores.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/bancoderegistradores.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vbinary_to_bcd
+Z7 !s110 1753130268
+!i10b 1
+!s100 EE9a=JQzd=z8]7k1ERQHD0
+IQSKTACojk]fGPV]5ThKb[1
+R1
+R2
+w1753124396
+8C:/Users/User/Desktop/RISCV_processador/sinteses/binary_to_bcd.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/binary_to_bcd.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z8 !s108 1753130268.000000
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/binary_to_bcd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/binary_to_bcd.v|
+!i113 1
+R5
+R6
+vbrench
+R0
+!i10b 1
+!s100 iJE`Dmk8<`X>>z:diPmP30
+IcHlV7CZE?LVUH5Cn80dXl3
+R1
+R2
+w1752104496
+8C:/Users/User/Desktop/RISCV_processador/sinteses/brench.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/brench.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/brench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/brench.v|
+!i113 1
+R5
+R6
+vclock_divider
+R7
+!i10b 1
+!s100 b8XS8m5Cm4m[Q]?2o^Fn30
+I03;;gRLWnMGKaOGVT:?JM3
+R1
+R2
+w1753047453
+8C:/Users/User/Desktop/RISCV_processador/sinteses/clock_divider.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/clock_divider.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/clock_divider.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/clock_divider.v|
+!i113 1
+R5
+R6
+vdata_memory
+Z9 !s110 1753275097
+!i10b 1
+!s100 WiTbLhR2eL75b9JlRF6KL0
+I=[anBncgVm8:SAGK1z2gi1
+R1
+R2
+w1753193881
+8C:/Users/User/Desktop/RISCV_processador/sinteses/data_memory.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/data_memory.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z10 !s108 1753275097.000000
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/data_memory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/data_memory.v|
+!i113 1
+R5
+R6
+vdebouncer
+R7
+!i10b 1
+!s100 XNXJEfb?lk?CMnajNn`iZ0
+IAmF>N8o3L]JZfjM>oHVnm1
+R1
+R2
+w1753047289
+8C:/Users/User/Desktop/RISCV_processador/sinteses/debouncer.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/debouncer.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/debouncer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/debouncer.v|
+!i113 1
+R5
+R6
+vdecoder_mmio_input
+Z11 !s110 1753130145
+!i10b 1
+!s100 PjedRFUcVO4[FlbakNoKb3
+IGiHBloG]C[7IcTX3n3;C20
+R1
+R2
+w1752881678
+8C:/Users/User/Desktop/RISCV_processador/sinteses/decoder_mmio_input.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/decoder_mmio_input.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z12 !s108 1753130145.000000
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/decoder_mmio_input.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/decoder_mmio_input.v|
+!i113 1
+R5
+R6
+vdecoder_mmio_output
+R11
+!i10b 1
+!s100 BA`TTa;ES50D[N0^V;gZ60
+I<gk6^j^9T^`Qkbh^Q49DJ2
+R1
+R2
+w1753125993
+8C:/Users/User/Desktop/RISCV_processador/sinteses/decoder_mmio_output.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/decoder_mmio_output.v
+L0 1
+R3
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/decoder_mmio_output.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/decoder_mmio_output.v|
+!i113 1
+R5
+R6
+vdisplay_device
+R7
+!i10b 1
+!s100 HYcWG2zZ;fE<z3Y34];bU0
+I9<:me0>oCmV:27kWg:D]N2
+R1
+R2
+w1753029930
+8C:/Users/User/Desktop/RISCV_processador/sinteses/display_device.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/display_device.v
+L0 2
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/display_device.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/display_device.v|
+!i113 1
+R5
+R6
+vdiv_mult
+R11
+!i10b 1
+!s100 >bH[3`@ReDjMQYM5kJMZV3
+IkBeJY7WB<mCFXn[=Y>FVW3
+R1
+R2
+w1752104381
+8C:/Users/User/Desktop/RISCV_processador/sinteses/div_mult.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/div_mult.v
+L0 1
+R3
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/div_mult.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/div_mult.v|
+!i113 1
+R5
+R6
+vextensor
+R11
+!i10b 1
+!s100 46DnB:C]N95hIA5QUP38^2
+I6?1OJ8V4?alGhCIfFaF>@1
+R1
+R2
+w1752277487
+8C:/Users/User/Desktop/RISCV_processador/sinteses/extensor.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/extensor.v
+L0 1
+R3
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/extensor.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/extensor.v|
+!i113 1
+R5
+R6
+vinput_device
+R9
+!i10b 1
+!s100 c@BNg4S^ji6d<X:[lciA^2
+ImDTQon`j7MZl[EoOHAP=C1
+R1
+R2
+w1753270054
+8C:/Users/User/Desktop/RISCV_processador/sinteses/input_device.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/input_device.v
+L0 1
+R3
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/input_device.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/input_device.v|
+!i113 1
+R5
+R6
+vinstruction_memory
+R11
+!i10b 1
+!s100 Ag[4CW<bD414__WbRT5H]0
+ICSdD<V5gEm8C6LSPU4]4m3
+R1
+R2
+w1753128614
+8C:/Users/User/Desktop/RISCV_processador/sinteses/instruction_memory.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/instruction_memory.v
+L0 2
+R3
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/instruction_memory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/instruction_memory.v|
+!i113 1
+R5
+R6
+vMux1
+R11
+!i10b 1
+!s100 M64U@mR3>6eX6YoToi]Rg0
+IV=9@U7QN>?8F@ezO8g`l42
+R1
+R2
+w1748436134
+8C:/Users/User/Desktop/RISCV_processador/sinteses/Mux1.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/Mux1.v
+L0 2
+R3
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/Mux1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/Mux1.v|
+!i113 1
+R5
+R6
+n@mux1
+vMux2
+R11
+!i10b 1
+!s100 `XblGoF4I@BVjBfLKTo1T3
+IIb4H4e_V1`E0iYJ[C;IBc1
+R1
+R2
+w1748436278
+8C:/Users/User/Desktop/RISCV_processador/sinteses/Mux2.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/Mux2.v
+L0 2
+R3
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/Mux2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/Mux2.v|
+!i113 1
+R5
+R6
+n@mux2
+vMux3
+R11
+!i10b 1
+!s100 ]QalGd51oLdAV^UgL;7U71
+I1Fna_<4ibA486EbPSX_Uh3
+R1
+R2
+w1751831656
+8C:/Users/User/Desktop/RISCV_processador/sinteses/Mux3.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/Mux3.v
+L0 4
+R3
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/Mux3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/Mux3.v|
+!i113 1
+R5
+R6
+n@mux3
+vMux4_pc_source
+R11
+!i10b 1
+!s100 GPDKon]zUm@8hAOIZWIbQ2
+I`7YoT_IQBN[EVgNe[NRk@0
+R1
+R2
+w1751829962
+8C:/Users/User/Desktop/RISCV_processador/sinteses/Mux4_pc_source.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/Mux4_pc_source.v
+L0 4
+R3
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/Mux4_pc_source.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/Mux4_pc_source.v|
+!i113 1
+R5
+R6
+n@mux4_pc_source
+vmux_pc_source
+R11
+!i10b 1
+!s100 >`R_mAgHWTEkEJhb09;[A2
+I_W7:eCj50bB6@fJ>a3LSR1
+R1
+R2
+w1748905972
+8C:/Users/User/Desktop/RISCV_processador/sinteses/mux_pc_source.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/mux_pc_source.v
+L0 3
+R3
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/mux_pc_source.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/mux_pc_source.v|
+!i113 1
+R5
+R6
+vpc_plus_4_adder
+R11
+!i10b 1
+!s100 ?:;Q0m<5FnI<RDijlic^N0
+IeK4lAR5Dg^4@nAio0ZZzg3
+R1
+R2
+w1752273066
+8C:/Users/User/Desktop/RISCV_processador/sinteses/pc_plus_4_adder.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/pc_plus_4_adder.v
+L0 3
+R3
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/pc_plus_4_adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/pc_plus_4_adder.v|
+!i113 1
+R5
+R6
+vpc_target_adder
+Z13 !s110 1753130146
+!i10b 1
+!s100 K7B5g[V>o:0M2<M=L_>721
+ITW;>SoO@HC;0KnT?662nP2
+R1
+R2
+w1751483664
+8C:/Users/User/Desktop/RISCV_processador/sinteses/pc_target_adder.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/pc_target_adder.v
+L0 5
+R3
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/pc_target_adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/pc_target_adder.v|
+!i113 1
+R5
+R6
+vprogram_counter
+R13
+!i10b 1
+!s100 kmg918fcQ=mbmfb3dOMgG2
+IHEI>f11iFVKCjNQJa4LMY0
+R1
+R2
+w1752107870
+8C:/Users/User/Desktop/RISCV_processador/sinteses/program_counter.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/program_counter.v
+L0 2
+R3
+r1
+!s85 0
+31
+Z14 !s108 1753130146.000000
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/program_counter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/program_counter.v|
+!i113 1
+R5
+R6
+vRISCV_processador
+R9
+!i10b 1
+!s100 HUWiQRBjFh66hO7i5>NId1
+I7S0^cEf@mV8l61_IfXk>81
+R1
+R2
+w1753270457
+8C:/Users/User/Desktop/RISCV_processador/sinteses/RISCV_processador.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/RISCV_processador.v
+L0 1
+R3
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/RISCV_processador.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/RISCV_processador.v|
+!i113 1
+R5
+R6
+n@r@i@s@c@v_processador
+vRISCV_processor_tb
+R13
+!i10b 1
+!s100 23H2TIXW2178hK=`N`e]i2
+IbmK:kkZ[aRAf5LIgoG0^c2
+R1
+R2
+w1752887831
+8C:/Users/User/Desktop/RISCV_processador/tb/RISCV_processador_tb.v
+FC:/Users/User/Desktop/RISCV_processador/tb/RISCV_processador_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/User/Desktop/RISCV_processador/tb/RISCV_processador_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/tb/RISCV_processador_tb.v|
+!i113 1
+R5
+R6
+n@r@i@s@c@v_processor_tb
+vula
+R13
+!i10b 1
+!s100 :KJJ:fhC4;9ljk:L7V1Jh1
+I?]oWegIbIBniKX62RJF?<0
+R1
+R2
+w1752104391
+8C:/Users/User/Desktop/RISCV_processador/sinteses/ula.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/ula.v
+L0 1
+R3
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/ula.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/ula.v|
+!i113 1
+R5
+R6
+vUnidade_de_controle
+R13
+!i10b 1
+!s100 ;]z3[AZ?oGgEhi55h?7Oa2
+I^19=RGVDb9]?zBnhNWjT;3
+R1
+R2
+w1752785865
+8C:/Users/User/Desktop/RISCV_processador/sinteses/Unidade_de_controle.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/Unidade_de_controle.v
+L0 1
+R3
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/Unidade_de_controle.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/Unidade_de_controle.v|
+!i113 1
+R5
+R6
+n@unidade_de_controle
+vUnidadeProcessamento
+R13
+!i10b 1
+!s100 `B04?TdP2eRb3YZ:J;Ffi2
+I5jKLFI[7cCN[M]GV`3I=k2
+R1
+R2
+w1748911542
+8C:/Users/User/Desktop/RISCV_processador/sinteses/UnidadeProcessamento.v
+FC:/Users/User/Desktop/RISCV_processador/sinteses/UnidadeProcessamento.v
+L0 2
+R3
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/User/Desktop/RISCV_processador/sinteses/UnidadeProcessamento.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/RISCV_processador/sinteses/UnidadeProcessamento.v|
+!i113 1
+R5
+R6
+n@unidade@processamento

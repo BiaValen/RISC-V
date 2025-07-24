@@ -1,0 +1,161 @@
+C:/Users/User/Desktop/RISCV_processador/sinteses/data_memory.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/data_memory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module data_memory
+
+Top level modules:
+	data_memory
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/ula.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/ula.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ula
+
+Top level modules:
+	ula
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/div_mult.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/div_mult.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module div_mult
+
+Top level modules:
+	div_mult
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/display_device.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/display_device.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module display_device
+
+Top level modules:
+	display_device
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/UnidadeProcessamento.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/UnidadeProcessamento.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UnidadeProcessamento
+
+Top level modules:
+	UnidadeProcessamento
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/decoder_mmio_input.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/decoder_mmio_input.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module decoder_mmio_input
+
+Top level modules:
+	decoder_mmio_input
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/data_memory.v.bak {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/data_memory.v.bak
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module data_memory
+
+Top level modules:
+	data_memory
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/decoder_mmio_output.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/decoder_mmio_output.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module decoder_mmio_output
+
+Top level modules:
+	decoder_mmio_output
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/pc_target_adder.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/pc_target_adder.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module pc_target_adder
+
+Top level modules:
+	pc_target_adder
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/Mux4_pc_source.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/Mux4_pc_source.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Mux4_pc_source
+
+Top level modules:
+	Mux4_pc_source
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/tb/RISCV_processador_tb.v {0 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/tb/RISCV_processador_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RISCV_processor_tb
+** Error: (vlog-13069) C:/Users/User/Desktop/RISCV_processador/tb/RISCV_processador_tb.v(44): near "/": syntax error, unexpected '/'.
+** Error: C:/Users/User/Desktop/RISCV_processador/tb/RISCV_processador_tb.v(47): (vlog-2730) Undefined variable: 'enter_button_i'.
+
+} {4.0 6.0} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/clock_divider.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/clock_divider.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module clock_divider
+
+Top level modules:
+	clock_divider
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/brench.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/brench.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module brench
+
+Top level modules:
+	brench
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/bancoderegistradores.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/bancoderegistradores.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module bancoderegistradores
+
+Top level modules:
+	bancoderegistradores
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/Mux1.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/Mux1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Mux1
+
+Top level modules:
+	Mux1
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/mux_pc_source.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/mux_pc_source.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mux_pc_source
+
+Top level modules:
+	mux_pc_source
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/Mux2.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/Mux2.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Mux2
+
+Top level modules:
+	Mux2
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/Mux3.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/Mux3.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Mux3
+
+Top level modules:
+	Mux3
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/debouncer.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/debouncer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module debouncer
+
+Top level modules:
+	debouncer
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/program_counter.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/program_counter.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module program_counter
+
+Top level modules:
+	program_counter
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/Unidade_de_controle.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/Unidade_de_controle.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Unidade_de_controle
+
+Top level modules:
+	Unidade_de_controle
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/pc_plus_4_adder.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/pc_plus_4_adder.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module pc_plus_4_adder
+
+Top level modules:
+	pc_plus_4_adder
+
+} {} {}} C:/Users/User/Desktop/RISCV_processador/sinteses/extensor.v {1 {vlog -work work -stats=none C:/Users/User/Desktop/RISCV_processador/sinteses/extensor.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module extensor
+
+Top level modules:
+	extensor
+
+} {} {}}

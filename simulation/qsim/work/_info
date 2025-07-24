@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/User/Desktop/RISCV_processador/simulation/qsim
+vhard_block
+!s110 1753297031
+!i10b 1
+!s100 3zG`:gTE_M`<^2ClX2QC20
+I2=lMB=BVSlOUPR=5<N40J0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1753297030
+Z2 8RISCV_processador.vo
+Z3 FRISCV_processador.vo
+L0 76248
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1753297031.000000
+Z5 !s107 RISCV_processador.vo|
+Z6 !s90 -work|work|RISCV_processador.vo|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+vtoplevel
+Z9 !s110 1753306871
+!i10b 1
+!s100 ?4;2P3c@X::4B:J`d>[f13
+Io;ImhNET>GnHf0adlK4h40
+R1
+R0
+w1753306869
+R2
+R3
+L0 31
+R4
+r1
+!s85 0
+31
+!s108 1753306870.000000
+R5
+R6
+!i113 1
+R7
+R8
+vtoplevel_vlg_vec_tst
+R9
+!i10b 1
+!s100 AHeiY6ZLUWgkNGN`A_j>o1
+IDl]XDNV_=5nfEaKm2_9I<3
+R1
+R0
+w1753306868
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+L0 29
+R4
+r1
+!s85 0
+31
+!s108 1753306871.000000
+!s107 Waveform1.vwf.vt|
+!s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R7
+R8

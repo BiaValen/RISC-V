@@ -1,0 +1,21 @@
+module input_device(
+    input wire clock,
+    input wire reset,
+
+    // Entradas físicas
+    input wire [17:0] switches,
+    input wire enter,
+   // Saída para o processador
+   output wire [31:0] data_out // Vai para o MUX5
+);
+
+    // lógica síncrona 
+    always@(posedge clk or posedge enter) begin
+        if (reset) begin 
+            data_out <= 18'b0;
+        end else if (enter) begin
+            data_out <= switches;
+        end
+    end
+
+endmodule
