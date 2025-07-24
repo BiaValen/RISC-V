@@ -162,19 +162,8 @@ if __name__ == "__main__":
     
     # Suas instruções de teste
     instructions_to_test = [
-        "sw x10, 2040(x0)",
-        "lw x5, 2044(x0)",
-        "bge x5, x0, -4",
-        "beq x6, x5, 40",
-        "addi x6, x5, -1",
         "addi x10, x0, 1",
-        "addi x11, x0, 0",
-        "beq x6, x0, 20",
-        "add x13, x10, x11",
-        "addi x11, x10, 0",
-        "addi x6, x6, -1",
-        "addi x10, x13, 0",
-        "bne x6, x0, -20",
+        
         "sw x10, 2040(x0)",
         "jal x9, -4"
     ]

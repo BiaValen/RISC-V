@@ -8,11 +8,11 @@ module input_device(
 
     // Interface com a CPU (MMIO)
     input  wire        cpu_read_en,     // Sinal indicando que a CPU está lendo deste dispositivo
-    output wire  [31:0]data_for_cpu_o   // Dado + Status para a CPU
+    output wire  [31:0]data_for_cpu_o,   // Dado + Status para a CPU
+    output reg         data_ready
 );
 
     reg [31:0] captured_data; // Registra o valor dos switches
-    reg        data_ready;    // A "bandeira" que indica que novos dados foram capturados
 
     // Lógica para capturar os dados e levantar a bandeira
     always @(posedge clk or posedge reset) begin

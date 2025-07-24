@@ -30,13 +30,13 @@ Z6 !s90 -work|work|RISCV_processador.vo|
 Z7 o-work work
 Z8 tCvgOpt 0
 vtoplevel
-Z9 !s110 1753306871
+Z9 !s110 1753372700
 !i10b 1
-!s100 ?4;2P3c@X::4B:J`d>[f13
-Io;ImhNET>GnHf0adlK4h40
+!s100 f`5CX677z[jz]KHz9_jd;3
+IKK?h1YQ`KnYhfTc2HhSjj2
 R1
-R0
-w1753306869
+Z10 dC:/Users/User/Desktop/RISCV/RISC-V/simulation/qsim
+w1753372699
 R2
 R3
 L0 31
@@ -44,7 +44,7 @@ R4
 r1
 !s85 0
 31
-!s108 1753306870.000000
+Z11 !s108 1753372700.000000
 R5
 R6
 !i113 1
@@ -53,21 +53,21 @@ R8
 vtoplevel_vlg_vec_tst
 R9
 !i10b 1
-!s100 AHeiY6ZLUWgkNGN`A_j>o1
-IDl]XDNV_=5nfEaKm2_9I<3
+!s100 UnfA[ZV5Yeb4ckWJ7im`<2
+IaXi4=n[Jz]T6m<j:z[oco0
 R1
-R0
-w1753306868
-8Waveform1.vwf.vt
-FWaveform1.vwf.vt
+R10
+w1753372698
+8Waveform3.vwf.vt
+FWaveform3.vwf.vt
 L0 29
 R4
 r1
 !s85 0
 31
-!s108 1753306871.000000
-!s107 Waveform1.vwf.vt|
-!s90 -work|work|Waveform1.vwf.vt|
+R11
+!s107 Waveform3.vwf.vt|
+!s90 -work|work|Waveform3.vwf.vt|
 !i113 1
 R7
 R8

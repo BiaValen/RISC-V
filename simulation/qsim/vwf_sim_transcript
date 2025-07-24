@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RISCV_processador -c RISCV_processador --vector_source="C:/Users/User/Desktop/RISCV_processador/Waveform1.vwf" --testbench_file="C:/Users/User/Desktop/RISCV_processador/simulation/qsim/Waveform1.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RISCV_processador -c RISCV_processador --vector_source="C:/Users/User/Desktop/RISCV/RISC-V/Waveform3.vwf" --testbench_file="C:/Users/User/Desktop/RISCV/RISC-V/simulation/qsim/Waveform3.vwf.vt"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -25,10 +25,12 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Wed Jul 23 18:41:07 2025
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RISCV_processador -c RISCV_processador --vector_source=C:/Users/User/Desktop/RISCV_processador/Waveform1.vwf --testbench_file=C:/Users/User/Desktop/RISCV_processador/simulation/qsim/Waveform1.vwf.vt
+    Info: Processing started: Thu Jul 24 12:58:18 2025
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RISCV_processador -c RISCV_processador --vector_source=C:/Users/User/Desktop/RISCV/RISC-V/Waveform3.vwf --testbench_file=C:/Users/User/Desktop/RISCV/RISC-V/simulation/qsim/Waveform3.vwf.vt
 Info (119006): Selected device EP4CE115F29C7 for design "RISCV_processador"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+e file when writing test bench files
 
 Completed successfully. 
 
@@ -36,7 +38,7 @@ Completed successfully.
 
 **** Generating the functional simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/User/Desktop/RISCV_processador/simulation/qsim/" RISCV_processador -c RISCV_processador
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/User/Desktop/RISCV/RISC-V/simulation/qsim/" RISCV_processador -c RISCV_processador
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -54,22 +56,22 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Wed Jul 23 18:41:08 2025
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/User/Desktop/RISCV_processador/simulation/qsim/ RISCV_processador -c RISCV_processador
+    Info: Processing started: Thu Jul 24 12:58:19 2025
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/User/Desktop/RISCV/RISC-V/simulation/qsim/ RISCV_processador -c RISCV_processador
 Info (119006): Selected device EP4CE115F29C7 for design "RISCV_processador"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file RISCV_processador.vo in folder "C:/Users/User/Desktop/RISCV_processador/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file RISCV_processador.vo in folder "C:/Users/User/Desktop/RISCV/RISC-V/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4657 megabytes
-    Info: Processing ended: Wed Jul 23 18:41:09 2025
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4651 megabytes
+    Info: Processing ended: Thu Jul 24 12:58:19 2025
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
 
 **** Generating the ModelSim .do script ****
 
-C:/Users/User/Desktop/RISCV_processador/simulation/qsim/RISCV_processador.do generated.
+C:/Users/User/Desktop/RISCV/RISC-V/simulation/qsim/RISCV_processador.do generated.
 
 Completed successfully. 
 
@@ -82,32 +84,31 @@ Reading C:/intelFPGA_lite/17.1/modelsim_ase/tcl/vsim/pref.tcl
 # 10.5b
 
 # do RISCV_processador.do
-
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:41:10 on Jul 23,2025
+# Start time: 12:58:20 on Jul 24,2025
 # vlog -work work RISCV_processador.vo 
 # -- Compiling module toplevel
 
 # 
 # Top level modules:
 # 	toplevel
-# End time: 18:41:11 on Jul 23,2025, Elapsed time: 0:00:01
+# End time: 12:58:20 on Jul 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:41:11 on Jul 23,2025
-# vlog -work work Waveform1.vwf.vt 
+# Start time: 12:58:20 on Jul 24,2025
+# vlog -work work Waveform3.vwf.vt 
+
 # -- Compiling module toplevel_vlg_vec_tst
 # 
 # Top level modules:
 # 	toplevel_vlg_vec_tst
-# End time: 18:41:11 on Jul 23,2025, Elapsed time: 0:00:00
+# End time: 12:58:20 on Jul 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.toplevel_vlg_vec_tst 
-# Start time: 18:41:11 on Jul 23,2025
+# Start time: 12:58:20 on Jul 24,2025
 # Loading work.toplevel_vlg_vec_tst
 # Loading work.toplevel
 # Loading cycloneive_ver.cycloneive_io_obuf
@@ -120,22 +121,22 @@ Reading C:/intelFPGA_lite/17.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading altera_ver.PRIM_GDFF_LOW
 # after#25
 
-# ** Note: $finish    : Waveform1.vwf.vt(64)
+# ** Note: $finish    : Waveform3.vwf.vt(64)
 #    Time: 1 us  Iteration: 0  Instance: /toplevel_vlg_vec_tst
-# End time: 18:41:11 on Jul 23,2025, Elapsed time: 0:00:00
+# End time: 12:58:20 on Jul 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/User/Desktop/RISCV_processador/Waveform1.vwf...
+Reading C:/Users/User/Desktop/RISCV/RISC-V/Waveform3.vwf...
 
-Reading C:/Users/User/Desktop/RISCV_processador/simulation/qsim/RISCV_processador.msim.vcd...
+Reading C:/Users/User/Desktop/RISCV/RISC-V/simulation/qsim/RISCV_processador.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/User/Desktop/RISCV_processador/simulation/qsim/RISCV_processador_20250723184112.sim.vwf
+Writing the resulting VWF to C:/Users/User/Desktop/RISCV/RISC-V/simulation/qsim/RISCV_processador_20250724125821.sim.vwf
 
 Finished VCD to VWF conversion.
 

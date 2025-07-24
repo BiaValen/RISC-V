@@ -18,7 +18,7 @@ SW[14] => SW[14].IN1
 SW[15] => SW[15].IN1
 SW[16] => SW[16].IN1
 SW[17] => SW[17].IN1
-KEY[0] => reset_key_pressed.IN3
+KEY[0] => reset_key_pressed.IN1
 KEY[1] => enter_key_pressed.IN1
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
@@ -248,7 +248,7 @@ clk => captured_data[27].CLK
 clk => captured_data[28].CLK
 clk => captured_data[29].CLK
 clk => captured_data[30].CLK
-clk => data_ready.CLK
+clk => data_ready~reg0.CLK
 reset => captured_data[0].ACLR
 reset => captured_data[1].ACLR
 reset => captured_data[2].ACLR
@@ -280,7 +280,7 @@ reset => captured_data[27].ACLR
 reset => captured_data[28].ACLR
 reset => captured_data[29].ACLR
 reset => captured_data[30].ACLR
-reset => data_ready.ACLR
+reset => data_ready~reg0.ACLR
 physical_switches_i[0] => captured_data[0].DATAIN
 physical_switches_i[1] => captured_data[1].DATAIN
 physical_switches_i[2] => captured_data[2].DATAIN
@@ -377,7 +377,8 @@ data_for_cpu_o[27] <= captured_data[27].DB_MAX_OUTPUT_PORT_TYPE
 data_for_cpu_o[28] <= captured_data[28].DB_MAX_OUTPUT_PORT_TYPE
 data_for_cpu_o[29] <= captured_data[29].DB_MAX_OUTPUT_PORT_TYPE
 data_for_cpu_o[30] <= captured_data[30].DB_MAX_OUTPUT_PORT_TYPE
-data_for_cpu_o[31] <= data_ready.DB_MAX_OUTPUT_PORT_TYPE
+data_for_cpu_o[31] <= data_ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_ready <= data_ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |toplevel|RISCV_processador:cpu
@@ -512,7 +513,8 @@ next_pc_debug[28] <= next_pc[28].DB_MAX_OUTPUT_PORT_TYPE
 next_pc_debug[29] <= next_pc[29].DB_MAX_OUTPUT_PORT_TYPE
 next_pc_debug[30] <= next_pc[30].DB_MAX_OUTPUT_PORT_TYPE
 next_pc_debug[31] <= next_pc[31].DB_MAX_OUTPUT_PORT_TYPE
-is_reading_input_debug_o <= <GND>
+is_reading_input_debug_o <= decoder_mmio_input:dec_in_inst.select_input_device_o
+data_is_ready_from_input => pc_stall.IN1
 
 
 |toplevel|RISCV_processador:cpu|pc_plus_4_adder:pc_plus_4_adder_inst
@@ -1044,6 +1046,38 @@ pc_out[28] <= pc_out[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pc_out[29] <= pc_out[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pc_out[30] <= pc_out[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pc_out[31] <= pc_out[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable => pc_out[31]~reg0.ENA
+enable => pc_out[30]~reg0.ENA
+enable => pc_out[29]~reg0.ENA
+enable => pc_out[28]~reg0.ENA
+enable => pc_out[27]~reg0.ENA
+enable => pc_out[26]~reg0.ENA
+enable => pc_out[25]~reg0.ENA
+enable => pc_out[24]~reg0.ENA
+enable => pc_out[23]~reg0.ENA
+enable => pc_out[22]~reg0.ENA
+enable => pc_out[21]~reg0.ENA
+enable => pc_out[20]~reg0.ENA
+enable => pc_out[19]~reg0.ENA
+enable => pc_out[18]~reg0.ENA
+enable => pc_out[17]~reg0.ENA
+enable => pc_out[16]~reg0.ENA
+enable => pc_out[15]~reg0.ENA
+enable => pc_out[14]~reg0.ENA
+enable => pc_out[13]~reg0.ENA
+enable => pc_out[12]~reg0.ENA
+enable => pc_out[11]~reg0.ENA
+enable => pc_out[10]~reg0.ENA
+enable => pc_out[9]~reg0.ENA
+enable => pc_out[8]~reg0.ENA
+enable => pc_out[7]~reg0.ENA
+enable => pc_out[6]~reg0.ENA
+enable => pc_out[5]~reg0.ENA
+enable => pc_out[4]~reg0.ENA
+enable => pc_out[3]~reg0.ENA
+enable => pc_out[2]~reg0.ENA
+enable => pc_out[1]~reg0.ENA
+enable => pc_out[0]~reg0.ENA
 
 
 |toplevel|RISCV_processador:cpu|instruction_memory:instruction_memory_inst

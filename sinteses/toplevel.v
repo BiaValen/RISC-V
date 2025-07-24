@@ -11,15 +11,17 @@ module toplevel (
     wire [31:0] input_device_data;
     wire [31:0] current_pc_from_cpu;
     wire [31:0] debug_next_pc;
-    wire cpu_is_reading_input; 
+    wire        cpu_is_reading_input; 
 
-    wire reset_key_pressed = KEY[0]; 
-    wire enter_key_pressed = KEY[1]; 
+    wire        reset_key_pressed = KEY[0]; 
+    wire        enter_key_pressed = KEY[1]; 
     
-    wire reset_signal; 
-    wire enter_signal; 
+    wire        reset_signal; 
+    wire        enter_signal; 
 
-    wire tick_1hz;
+    wire        tick_1hz;
+
+    wire        input_data_ready_signal;
 
      // --- Sinais que conectam a CPU ao Display ---
     wire        we_signal_from_cpu;
@@ -51,21 +53,23 @@ module toplevel (
 
     input_device input_unit (
         .clk(CLOCK_50),
-        .reset(reset_key_pressed),
+        .reset(reset_signal),
         .physical_switches_i({14'b0, SW[17:0]}),
         .enter_button_i(enter_signal),
         .cpu_read_en(cpu_is_reading_input), // Informa ao controlador quando a CPU está lendo
-        .data_for_cpu_o(input_device_data)
+        .data_for_cpu_o(input_device_data),
+        .data_ready(input_data_ready_signal)
     );
 
     RISCV_processador cpu (
         .clk(tick_1hz),
-        .reset(reset_key_pressed),
+        .reset(reset_signal),
         .external_input_i(input_device_data),  
         .display_data_o(data_from_cpu_for_output),
         .display_we_o(we_signal_from_cpu),
         .pc_out_debug(current_pc_from_cpu), 
         .is_reading_input_debug_o(cpu_is_reading_input),
+        .data_is_ready_from_input(input_data_ready_signal),
         .next_pc_debug(debug_next_pc)     
     );
     

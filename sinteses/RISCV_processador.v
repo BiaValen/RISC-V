@@ -9,9 +9,16 @@ module RISCV_processador(
     // SAÍDA PARA DEPURAÇÃO
     output wire [31:0] pc_out_debug,
     output wire [31:0] next_pc_debug,
-    output wire is_reading_input_debug_o
+    output wire       is_reading_input_debug_o,
+    input wire        data_is_ready_from_input
 );
  
+    // Ativa o stall se:
+    // 1. É uma instrução de leitura (MemRead)
+    // 2. O endereço é o do dispositivo de entrada (INPUT_ADDR)
+    // 3. E o dispositivo de entrada NÃO está pronto (!data_is_ready...)
+    assign pc_stall = MemRead && (alu_result == INPUT_ADDR) && !data_is_ready_from_input;
+    assign is_reading_input_debug_o = select_input_device;
 
     // --- FIOS INTERNOS (WIRES) ---
     wire [31:0] pc_out, instruction, pc_plus, pc_target_addr, next_pc;
@@ -97,7 +104,8 @@ module RISCV_processador(
         .clock(clk), 
         .reset(reset), 
         .pc_in(next_pc), 
-        .pc_out(pc_out) 
+        .pc_out(pc_out),
+        .enable(!pc_stall)  // <-- PC só avança se NÃO houver stall
     );
     
     instruction_memory instruction_memory_inst ( 
