@@ -13,8 +13,8 @@ module toplevel (
     wire [31:0] debug_next_pc;
     wire        cpu_is_reading_input; 
 
-    wire        reset_key_pressed = KEY[0]; 
-    wire        enter_key_pressed = KEY[1]; 
+    wire        reset_key_pressed = ~KEY[0]; 
+    wire        enter_key_pressed = ~KEY[1]; 
     
     wire        reset_signal; 
     wire        enter_signal; 
@@ -27,9 +27,11 @@ module toplevel (
     wire        we_signal_from_cpu;
     wire [31:0] data_from_cpu_for_output;
     reg  [31:0] display_value_reg;
+	 
+	 
 
     clock_divider #(
-        .DIVISOR(2)//50_000_000
+        .DIVISOR(10_000_000)//50_000_000
     ) clk_div_1hz (
         .clk(CLOCK_50),
         .reset(reset_signal),
@@ -55,7 +57,7 @@ module toplevel (
         .clk(CLOCK_50),
         .reset(reset_signal),
         .physical_switches_i({14'b0, SW[17:0]}),
-        .enter_button_i(enter_signal),
+        .enter_button_i(enter_signal), //mudei aqui pra simulação
         .cpu_read_en(cpu_is_reading_input), // Informa ao controlador quando a CPU está lendo
         .data_for_cpu_o(input_device_data),
         .data_ready(input_data_ready_signal)
@@ -70,7 +72,11 @@ module toplevel (
         .pc_out_debug(current_pc_from_cpu), 
         .is_reading_input_debug_o(cpu_is_reading_input),
         .data_is_ready_from_input(input_data_ready_signal),
-        .next_pc_debug(debug_next_pc)     
+        .next_pc_debug(debug_next_pc),
+		.debug_instruction(w_debug_instruction),
+		.debug_MemRead(w_debug_MemRead),
+		.debug_alu_result(w_debug_alu_result),
+		.debug_select_input_device(w_debug_select_input_device)		  
     );
     
     // --- LÓGICA DO DISPLAY COM REGISTRADOR DE SAÍDA DEDICADO ---
@@ -79,8 +85,8 @@ module toplevel (
             display_value_reg <= 32'd0; // Valor inicial para teste
         end else if (we_signal_from_cpu) begin
             display_value_reg <= data_from_cpu_for_output;
-        // end else if (SW[17]) begin // DEBUG: Use SW[17] para testar manualmente
-        //     display_value_reg <= {14'b0, SW[17:0]}; // Mostra valor dos switches
+        // end else if (enter_signal) begin // DEBUG: Use SW[17] para testar manualmente
+        //      display_value_reg <= {15'b0, SW[16:0]}; // Mostra valor dos switches
         end
     end
 

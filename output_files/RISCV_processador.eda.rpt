@@ -1,5 +1,5 @@
 EDA Netlist Writer report for RISCV_processador
-Thu Jul 24 12:58:19 2025
+Thu Jul 24 21:58:51 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Jul 24 12:58:19 2025 ;
+; EDA Netlist Writer Status ; Successful - Thu Jul 24 21:58:51 2025 ;
 ; Revision Name             ; RISCV_processador                     ;
 ; Top-level Entity Name     ; toplevel                              ;
 ; Family                    ; Cyclone IV E                          ;
@@ -93,15 +93,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Jul 24 12:58:19 2025
+    Info: Processing started: Thu Jul 24 21:58:50 2025
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/User/Desktop/RISCV/RISC-V/simulation/qsim/ RISCV_processador -c RISCV_processador
 Info (119006): Selected device EP4CE115F29C7 for design "RISCV_processador"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file RISCV_processador.vo in folder "C:/Users/User/Desktop/RISCV/RISC-V/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4651 megabytes
-    Info: Processing ended: Thu Jul 24 12:58:19 2025
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 4654 megabytes
+    Info: Processing ended: Thu Jul 24 21:58:51 2025
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

@@ -10,15 +10,19 @@ module RISCV_processador(
     output wire [31:0] pc_out_debug,
     output wire [31:0] next_pc_debug,
     output wire       is_reading_input_debug_o,
-    input wire        data_is_ready_from_input
+    input wire        data_is_ready_from_input,
+	 
+	 
+	     // Adicione estas saídas temporárias de depuração
+    output wire [31:0] debug_instruction,
+    output wire        debug_MemRead,
+    output wire [31:0] debug_alu_result,
+    output wire        debug_select_input_device
 );
- 
-    // Ativa o stall se:
-    // 1. É uma instrução de leitura (MemRead)
-    // 2. O endereço é o do dispositivo de entrada (INPUT_ADDR)
-    // 3. E o dispositivo de entrada NÃO está pronto (!data_is_ready...)
-    assign pc_stall = MemRead && (alu_result == INPUT_ADDR) && !data_is_ready_from_input;
-    assign is_reading_input_debug_o = select_input_device;
+	
+    localparam DISPLAY_ADDR = 32'd2040; // Endereço do registrador de saída
+    localparam INPUT_ADDR = 32'd2044; // Endereço do registrador de entrada
+    
 
     // --- FIOS INTERNOS (WIRES) ---
     wire [31:0] pc_out, instruction, pc_plus, pc_target_addr, next_pc;
@@ -54,12 +58,20 @@ module RISCV_processador(
     assign next_pc_debug = next_pc;
     assign pc_out_debug = pc_out;
 
-    localparam DISPLAY_ADDR = 32'd2040; // Endereço do registrador de saída
-    localparam INPUT_ADDR = 32'd2044; // Endereço do registrador de entrada
+    assign debug_instruction         = instruction;
+	assign debug_MemRead             = MemRead;
+	assign debug_alu_result          = alu_result;
+	assign debug_select_input_device = select_input_device;
 
+    // Ativa o stall se:
+    // 1. É uma instrução de leitura (MemRead)
+    // 2. O endereço é o do dispositivo de entrada (INPUT_ADDR)
+    // 3. E o dispositivo de entrada NÃO está pronto (!data_is_ready...)
+    assign pc_stall = MemRead && (alu_result == INPUT_ADDR) && !data_is_ready_from_input;
+    assign is_reading_input_debug_o = select_input_device;
     
     // Lógica de detecção de escrita no display
-    assign display_write_internal = (alu_result == DISPLAY_ADDR) && MemWrite;
+    assign display_write_internal = (alu_result == DISPLAY_ADDR) && MemWrite && !pc_stall;
     
     // Saídas para o display
     assign display_data_o = read_data2;

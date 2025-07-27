@@ -162,10 +162,21 @@ if __name__ == "__main__":
     
     # Suas instruções de teste
     instructions_to_test = [
-        "addi x10, x0, 1",
-        
-        "sw x10, 2040(x0)",
-        "jal x9, -4"
+        "lw x3, 2044(x0)",
+
+        "addi x1, x0, 0",
+        "addi x2, x0, 1",
+        "sub x3, x3, x2",
+        "beq x3, x0, 24",
+        "add x6, x1, x2",
+        "addi x1, x2, 0",
+        "addi x2, x6, 0",
+        "addi x3, x3, -1",
+        "sw x1, 2040(x0)",
+        "jal x0, -24",
+
+        "sw x1, 2040(x0)",
+        "jal x0, -48"
     ]
 
     print("--- Gerador de Instruções RISC-V ---")

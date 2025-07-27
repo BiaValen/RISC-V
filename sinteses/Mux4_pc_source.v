@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 // Módulo MUX4, que seleciona a fonte do próximo PC (PcSource)
 module Mux4_pc_source (
     // Entradas de Dados

@@ -14,7 +14,7 @@ module Mux3(
     // Lógica combinacional para o MUX
     // A seleção foi ajustada para corresponder aos sinais da Unidade de Controle
     assign out_data = (sel == 2'b00) ? in_exec_result : // Para R-Type e I-Type
-                      (sel == 2'b01) ? in_pc_plus :   // Para JAL/JALR
+                      (sel == 2'b01) ? in_pc_plus :     // Para JAL/JALR
                       (sel == 2'b11) ? in_mem_data :    // Para LW
                       32'hxxxxxxxx; // Valor indefinido para seleção inválida
 

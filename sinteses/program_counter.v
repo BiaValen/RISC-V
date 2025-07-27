@@ -4,7 +4,7 @@ module program_counter (
     input  wire        reset,      // Sinal de reset (ativo alto)
     input  wire [31:0] pc_in,      // Próximo valor do PC (vindo do MUX4)
     output reg  [31:0] pc_out,      // Valor atual do PC (para Memória de Instrução e lógica PC+4/Target)
-    input wire enable
+    input wire         enable
 );
 
     // Lógica síncrona para o registrador PC

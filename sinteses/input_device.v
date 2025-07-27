@@ -1,11 +1,9 @@
 module input_device(
     input  wire        clk,        // Clock rápido (50MHz)
     input  wire        reset,
-
     // Sinais Físicos
     input  wire [31:0] physical_switches_i,
-    input  wire        enter_button_i,     // Pulso limpo do debouncer do "Enter"
-
+    input  wire        enter_button_i,    
     // Interface com a CPU (MMIO)
     input  wire        cpu_read_en,     // Sinal indicando que a CPU está lendo deste dispositivo
     output wire  [31:0]data_for_cpu_o,   // Dado + Status para a CPU
@@ -23,13 +21,12 @@ module input_device(
             captured_data <= physical_switches_i; // ...captura o valor
             data_ready <= 1'b1;                   // ...e levanta a bandeira.
         end else if (cpu_read_en) begin // Se a CPU está lendo...
-            data_ready <= 1'b0;       // ...abaixa a bandeira.
+            data_ready <= 1'b0;       // ...abaixa a bandeira. NAO COMENTAR
         end
     end
 
-    // A saída para a CPU combina o dado capturado com o bit de status
-    // O bit 31 será nossa flag 'data_ready'. Os bits 30:0 serão os dados.
-    assign data_for_cpu_o = {data_ready, captured_data[30:0]};
+    
+    assign data_for_cpu_o = captured_data;
 
 
 endmodule

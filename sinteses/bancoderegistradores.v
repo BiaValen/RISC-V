@@ -22,17 +22,13 @@ module bancoderegistradores (
     // A escrita ocorre apenas na borda de subida do clock E se reg_write estiver ativo e se o endereço de escrita nao for x0.
     integer i; 
     always @(posedge clock or posedge reset) begin
-        if (reset) begin
-            for (i = 0; i < 32; i = i + 1) begin
-                rf_array[i] <= 32'b0;
-            end
-        end else if (reg_write && (write_addr != 5'b0)) begin
+        if (reg_write && (write_addr != 5'b0)) begin
             // Condicao de escrita:
             // 1. reg_write deve ser '1' (habilitado pela Unidade de Controle).
-            // 2. write_addr nao deve ser 5'b0 ou seja, nao tentar escrever no registrador x0.
+            // 2. write_addr nao deve ser 5'b0, nao tentar escrever no registrador x0.
             rf_array[write_addr] <= write_data; // Atribuicao não bloqueante, valor eh atualizado na borda do clock.
         end
-        // Se as condicoes acima nao forem atendidas, os valores nos rf_array permanecem inalterados.
+        // Se as condicoes acima nao forem atendidas, os valores nos rf_array permanecem inalterados
     end
 
 endmodule

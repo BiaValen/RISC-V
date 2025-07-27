@@ -7,7 +7,7 @@ module decoder_mmio_input (
 );
 
     // Endereço do dispositivo de entrada
-    localparam INPUT_ADDR = 32'd2044; // Limitado à -2048-2047 por causa do tamanho do registrador de 32 bits
+    localparam INPUT_ADDR = 32'd 2044; // Limitado à -2048-2047 por causa do tamanho do registrador de 32 bits
 
     // O MUX 5 deve selecionar o dispositivo de entrada se MemRead estiver ativo E o endereço for o do dispositivo.
     assign select_input_device_o = (Address_i == INPUT_ADDR) && MemRead_i;
